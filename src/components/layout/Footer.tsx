@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { GitHub, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               rel="noopener noreferrer"
               className="flex items-center space-x-2 hover:text-primary transition-colors duration-300"
             >
-              <GitHub size={20} />
+              <Github size={20} />
               <span>GitHub</span>
             </a>
             <a 

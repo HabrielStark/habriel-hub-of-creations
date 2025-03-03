@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { ExternalLink, GitHub } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -129,7 +129,7 @@ const ProjectsSection: React.FC = () => {
                         rel="noopener noreferrer"
                         className="button-secondary flex items-center gap-2"
                       >
-                        <GitHub size={18} />
+                        <Github size={18} />
                         GitHub
                       </a>
                     )}

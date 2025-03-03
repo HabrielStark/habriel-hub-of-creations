@@ -1,6 +1,7 @@
+
 import React, { useEffect, useState } from 'react';
-import { toast } from "@/components/ui/sonner";
-import { Send, ArrowRight, GitHub, ExternalLink } from 'lucide-react';
+import { toast } from "sonner";
+import { Send, ArrowRight, Github, ExternalLink } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -150,7 +151,7 @@ const ContactSection: React.FC = () => {
                 <div className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center flex-shrink-0">
-                      <GitHub className="text-primary" size={24} />
+                      <Github className="text-primary" size={24} />
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold mb-1">GitHub</h4>
