@@ -9,15 +9,18 @@
 .cyberpunk-highlight {
   color: #0ea5e9;
   text-shadow: 0 0 5px rgba(14, 165, 233, 0.5);
+  animation: cyber-text-pulse 3s infinite alternate;
 }
 
 .cyber-glow {
   box-shadow: 0 0 15px rgba(14, 165, 233, 0.6);
+  animation: cyber-glow-pulse 2s infinite alternate;
 }
 
 .cyber-border {
   border: 1px solid rgba(14, 165, 233, 0.3);
   position: relative;
+  overflow: hidden;
 }
 
 .cyber-border::before {
@@ -28,6 +31,7 @@
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, #0ea5e9, transparent);
+  animation: cyber-border-flow 3s infinite linear;
 }
 
 .cyber-border::after {
@@ -38,6 +42,7 @@
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, #0ea5e9, transparent);
+  animation: cyber-border-flow-reverse 3s infinite linear;
 }
 
 .terminal-window {
@@ -65,4 +70,92 @@
     transparent 2px
   );
   pointer-events: none;
+  animation: scanline-scroll 10s linear infinite;
+}
+
+.cyber-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cyber-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.2), transparent);
+  transition: left 0.7s ease;
+}
+
+.cyber-button:hover::before {
+  left: 100%;
+}
+
+.hacker-text-animation {
+  animation: hacker-text 3s ease infinite;
+}
+
+.cyber-card-animation {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cyber-card-animation:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.7);
+}
+
+.glitch-hover {
+  position: relative;
+}
+
+.glitch-hover:hover {
+  animation: text-glitch 0.5s ease;
+}
+
+/* Cyberpunk animations */
+@keyframes cyber-text-pulse {
+  0% { text-shadow: 0 0 5px rgba(14, 165, 233, 0.5); }
+  50% { text-shadow: 0 0 15px rgba(14, 165, 233, 0.8); }
+  100% { text-shadow: 0 0 5px rgba(14, 165, 233, 0.5); }
+}
+
+@keyframes cyber-glow-pulse {
+  0% { box-shadow: 0 0 5px rgba(14, 165, 233, 0.6); }
+  100% { box-shadow: 0 0 20px rgba(14, 165, 233, 0.8); }
+}
+
+@keyframes cyber-border-flow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes cyber-border-flow-reverse {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes scanline-scroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 500px; }
+}
+
+@keyframes hacker-text {
+  0% { letter-spacing: normal; }
+  5% { letter-spacing: -1px; }
+  10% { letter-spacing: normal; }
+  15% { letter-spacing: 1px; }
+  20% { letter-spacing: normal; }
+  100% { letter-spacing: normal; }
+}
+
+@keyframes text-glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
 }
