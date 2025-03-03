@@ -9,12 +9,12 @@
 .cyberpunk-highlight {
   color: #0ea5e9;
   text-shadow: 0 0 5px rgba(14, 165, 233, 0.5);
-  animation: cyber-text-pulse 3s infinite alternate;
+  animation: cyber-text-pulse 4s infinite alternate; /* Slowed down animation */
 }
 
 .cyber-glow {
-  box-shadow: 0 0 15px rgba(14, 165, 233, 0.6);
-  animation: cyber-glow-pulse 2s infinite alternate;
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.4); /* Reduced glow intensity */
+  animation: cyber-glow-pulse 3s infinite alternate; /* Slowed down animation */
 }
 
 .cyber-border {
@@ -31,7 +31,7 @@
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, #0ea5e9, transparent);
-  animation: cyber-border-flow 3s infinite linear;
+  animation: cyber-border-flow 5s infinite linear; /* Slowed down animation */
 }
 
 .cyber-border::after {
@@ -42,7 +42,7 @@
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, #0ea5e9, transparent);
-  animation: cyber-border-flow-reverse 3s infinite linear;
+  animation: cyber-border-flow-reverse 5s infinite linear; /* Slowed down animation */
 }
 
 .terminal-window {
@@ -70,7 +70,8 @@
     transparent 2px
   );
   pointer-events: none;
-  animation: scanline-scroll 10s linear infinite;
+  animation: scanline-scroll 20s linear infinite; /* Slowed down animation */
+  opacity: 0.5; /* Reduced opacity */
 }
 
 .cyber-button {
@@ -86,7 +87,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.1), transparent); /* Reduced intensity */
   transition: left 0.7s ease;
 }
 
@@ -95,16 +96,16 @@
 }
 
 .hacker-text-animation {
-  animation: hacker-text 3s ease infinite;
+  animation: hacker-text 6s ease infinite; /* Slowed down animation */
 }
 
 .cyber-card-animation {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .cyber-card-animation:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.7);
+  transform: translateY(-3px); /* Reduced movement */
+  box-shadow: 0 8px 20px -5px rgba(14, 165, 233, 0.5); /* Reduced shadow intensity */
 }
 
 .glitch-hover {
@@ -112,19 +113,18 @@
 }
 
 .glitch-hover:hover {
-  animation: text-glitch 0.5s ease;
+  animation: text-glitch 0.3s ease; /* Shortened animation duration */
 }
 
-/* Cyberpunk animations */
+/* Cyberpunk animations - more subtle versions */
 @keyframes cyber-text-pulse {
-  0% { text-shadow: 0 0 5px rgba(14, 165, 233, 0.5); }
-  50% { text-shadow: 0 0 15px rgba(14, 165, 233, 0.8); }
-  100% { text-shadow: 0 0 5px rgba(14, 165, 233, 0.5); }
+  0% { text-shadow: 0 0 3px rgba(14, 165, 233, 0.3); }
+  100% { text-shadow: 0 0 8px rgba(14, 165, 233, 0.5); }
 }
 
 @keyframes cyber-glow-pulse {
-  0% { box-shadow: 0 0 5px rgba(14, 165, 233, 0.6); }
-  100% { box-shadow: 0 0 20px rgba(14, 165, 233, 0.8); }
+  0% { box-shadow: 0 0 3px rgba(14, 165, 233, 0.4); }
+  100% { box-shadow: 0 0 10px rgba(14, 165, 233, 0.6); }
 }
 
 @keyframes cyber-border-flow {
@@ -144,18 +144,18 @@
 
 @keyframes hacker-text {
   0% { letter-spacing: normal; }
-  5% { letter-spacing: -1px; }
+  5% { letter-spacing: -0.5px; } /* Reduced effect */
   10% { letter-spacing: normal; }
-  15% { letter-spacing: 1px; }
+  15% { letter-spacing: 0.5px; } /* Reduced effect */
   20% { letter-spacing: normal; }
   100% { letter-spacing: normal; }
 }
 
 @keyframes text-glitch {
   0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
+  20% { transform: translate(-1px, 1px); } /* Reduced movement */
+  40% { transform: translate(-1px, -1px); } /* Reduced movement */
+  60% { transform: translate(1px, 1px); } /* Reduced movement */
+  80% { transform: translate(1px, -1px); } /* Reduced movement */
   100% { transform: translate(0); }
 }

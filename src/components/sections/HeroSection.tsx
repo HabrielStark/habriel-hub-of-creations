@@ -20,10 +20,10 @@ const HeroSection: React.FC = () => {
     const elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach((el) => observer.observe(el));
 
-    // Matrix text animation
+    // Matrix text animation - less frequent and less intense
     if (heroRef.current) {
       const matrixContainer = document.createElement('div');
-      matrixContainer.className = 'matrix-container absolute inset-0 pointer-events-none z-0 opacity-30';
+      matrixContainer.className = 'matrix-container absolute inset-0 pointer-events-none z-0 opacity-20'; // Reduced opacity
       heroRef.current.appendChild(matrixContainer);
       
       const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
@@ -31,17 +31,17 @@ const HeroSection: React.FC = () => {
         const text = document.createElement('div');
         text.className = 'matrix-text';
         text.style.left = `${Math.random() * 100}%`;
-        text.style.animationDuration = `${3 + Math.random() * 5}s`;
+        text.style.animationDuration = `${5 + Math.random() * 7}s`; // Slowed down
         text.innerText = characters[Math.floor(Math.random() * characters.length)];
         matrixContainer.appendChild(text);
         
         setTimeout(() => {
           matrixContainer.removeChild(text);
-        }, 8000);
+        }, 12000);
       };
       
-      // Generate matrix text at intervals
-      const intervalId = setInterval(generateMatrixText, 200);
+      // Generate matrix text at less frequent intervals
+      const intervalId = setInterval(generateMatrixText, 500); // Less frequent matrix text generation
       
       return () => {
         clearInterval(intervalId);
