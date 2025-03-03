@@ -20,7 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['SF Pro Display', 'system-ui', 'sans-serif'],
+				sans: ['Orbitron', 'SF Pro Display', 'system-ui', 'sans-serif'],
+				mono: ['JetBrains Mono', 'monospace'],
 				serif: ['SF Pro Text', 'Georgia', 'serif'],
 			},
 			colors: {
@@ -66,6 +67,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				cyber: {
+					'neon': '#0ea5e9',
+					'purple': '#8b5cf6',
+					'pink': '#d946ef',
+					'dark': '#171717',
+					'terminal': '#0c0c0c',
+					'accent': '#f97316'
 				}
 			},
 			borderRadius: {
@@ -109,6 +118,32 @@ export default {
 				float: {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'glitch': {
+					'0%, 100%': { transform: 'translate(0)' },
+					'20%': { transform: 'translate(-5px, 5px)' },
+					'40%': { transform: 'translate(-5px, -5px)' },
+					'60%': { transform: 'translate(5px, 5px)' },
+					'80%': { transform: 'translate(5px, -5px)' }
+				},
+				'scanline': {
+					'0%': { transform: 'translateY(0%)' },
+					'100%': { transform: 'translateY(100%)' }
+				},
+				'text-flicker': {
+					'0%, 100%': { opacity: '1' },
+					'10%, 30%': { opacity: '0.6' },
+					'20%, 40%, 60%': { opacity: '1' },
+					'50%, 70%': { opacity: '0.8' },
+					'80%': { opacity: '0.7' }
+				},
+				'pulse-neon': {
+					'0%, 100%': { 
+						textShadow: '0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0ea5e9, 0 0 80px #0ea5e9, 0 0 90px #0ea5e9, 0 0 100px #0ea5e9, 0 0 150px #0ea5e9'
+					},
+					'50%': { 
+						textShadow: '0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 30px #0ea5e9, 0 0 60px #0ea5e9, 0 0 70px #0ea5e9, 0 0 80px #0ea5e9, 0 0 100px #0ea5e9'
+					}
 				}
 			},
 			animation: {
@@ -120,7 +155,11 @@ export default {
 				'slide-in': 'slide-in 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
 				'blur-in': 'blur-in 0.6s ease-out',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'glitch': 'glitch 1s ease-in-out infinite alternate',
+				'scanline': 'scanline 8s linear infinite',
+				'text-flicker': 'text-flicker 3s linear infinite',
+				'pulse-neon': 'pulse-neon 1.5s ease-in-out infinite alternate'
 			}
 		}
 	},
